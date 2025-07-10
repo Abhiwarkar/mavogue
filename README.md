@@ -205,14 +205,14 @@ POST /api/cart/update          # Update cart quantity
 ## 🔍 Testing
 
 ### Manual Testing Checklist
-- [ ] User registration and login
-- [ ] Product browsing and search
-- [ ] Add to cart functionality
-- [ ] Wishlist operations
-- [ ] Checkout process (all payment methods)
-- [ ] Order tracking
-- [ ] Admin product management
-- [ ] Admin order management
+-  User registration and login
+-  Product browsing and search
+-  Add to cart functionality
+-  Wishlist operations
+-  Checkout process (all payment methods)
+-  Order tracking
+-  Admin product management
+-  Admin order management
 
 
 
