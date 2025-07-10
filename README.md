@@ -1,28 +1,15 @@
 # 🛍️ Mavogue - Full Stack E-commerce Platform
 
-[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6.x-green.svg)](https://mongodb.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A modern, full-stack fashion e-commerce platform built with React.js, Redux Toolkit, Node.js, and MongoDB. Features include secure authentication, dual payment gateways, real-time order tracking, and comprehensive admin dashboard.
 
 ## 🚀 Live Demo
 
-- **Frontend**: [https://mavogue-frontend.vercel.app](https://mavogue-frontend.vercel.app)
-- **Admin Panel**: [https://mavogue-admin.vercel.app](https://mavogue-admin.vercel.app)
+- **Frontend**:https://mavogue-frontend.vercel.app/
+- **Admin Panel**:https://mavogue-admin.vercel.app/
+-  **Backend**: https://mavogue-backend.vercel.app/
 
-## 📋 Table of Contents
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Quick Start](#-quick-start)
-- [Installation](#-installation)
-- [Environment Variables](#-environment-variables)
-- [API Documentation](#-api-documentation)
-- [Project Structure](#-project-structure)
-- [Contributing](#-contributing)
-- [License](#-license)
 
 ## ✨ Features
 
@@ -88,8 +75,8 @@ A modern, full-stack fashion e-commerce platform built with React.js, Redux Tool
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/mavogue-ecommerce.git
-cd mavogue-ecommerce
+git clone https://github.com/Abhiwarkar/mavogue
+cd mavogue
 ```
 
 ### Install Dependencies
@@ -99,22 +86,21 @@ cd frontend
 npm install
 
 # Install backend dependencies
-cd ../backend
+cd backend
 npm install
 
 # Install admin dependencies
-cd ../admin
+cd admin
 npm install
 ```
 
-### Environment Setup
-Create `.env` files in respective directories (see [Environment Variables](#-environment-variables))
+
 
 ### Start Development Servers
 ```bash
 # Terminal 1 - Backend
 cd backend
-npm run dev
+npm run server
 
 # Terminal 2 - Frontend
 cd frontend
@@ -138,21 +124,9 @@ npm install
 Create `.env` file:
 ```env
 PORT=4000
-MONGODB_URI=mongodb://localhost:27017/mavogue
-JWT_SECRET=your-super-secret-jwt-key
-ADMIN_EMAIL=admin@mavogue.com
-ADMIN_PASSWORD=admin123
+ADMIN_EMAIL=abhi@123.com
+ADMIN_PASSWORD=abhi123
 
-# Cloudinary Configuration
-CLOUDINARY_NAME=your-cloudinary-name
-CLOUDINARY_API_KEY=your-cloudinary-api-key
-CLOUDINARY_SECRET_KEY=your-cloudinary-secret-key
-
-# Payment Gateway Configuration
-STRIPE_SECRET_KEY=sk_test_your-stripe-secret-key
-RAZORPAY_KEY_ID=rzp_test_your-razorpay-key-id
-RAZORPAY_KEY_SECRET=your-razorpay-key-secret
-```
 
 Start backend server:
 ```bash
@@ -168,7 +142,6 @@ npm install
 Create `.env` file:
 ```env
 VITE_BACKEND_URL=http://localhost:4000
-VITE_RAZORPAY_KEY_ID=rzp_test_your-razorpay-key-id
 ```
 
 Start frontend server:
@@ -192,35 +165,6 @@ Start admin server:
 npm run dev
 ```
 
-## 🌍 Environment Variables
-
-### Backend (.env)
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `PORT` | Server port number | ✅ |
-| `MONGODB_URI` | MongoDB connection string | ✅ |
-| `JWT_SECRET` | JWT signing secret | ✅ |
-| `ADMIN_EMAIL` | Admin login email | ✅ |
-| `ADMIN_PASSWORD` | Admin login password | ✅ |
-| `CLOUDINARY_NAME` | Cloudinary cloud name | ✅ |
-| `CLOUDINARY_API_KEY` | Cloudinary API key | ✅ |
-| `CLOUDINARY_SECRET_KEY` | Cloudinary secret key | ✅ |
-| `STRIPE_SECRET_KEY` | Stripe secret key | ⚪ |
-| `RAZORPAY_KEY_ID` | Razorpay key ID | ⚪ |
-| `RAZORPAY_KEY_SECRET` | Razorpay secret key | ⚪ |
-
-### Frontend (.env)
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `VITE_BACKEND_URL` | Backend API URL | ✅ |
-| `VITE_RAZORPAY_KEY_ID` | Razorpay public key | ⚪ |
-
-### Admin (.env)
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `VITE_BACKEND_URL` | Backend API URL | ✅ |
-
-## 📖 API Documentation
 
 ### Authentication Endpoints
 ```http
@@ -256,64 +200,7 @@ POST /api/cart/add             # Add to cart
 POST /api/cart/update          # Update cart quantity
 ```
 
-## 📁 Project Structure
 
-```
-mavogue-ecommerce/
-├── 📁 frontend/                 # React.js frontend
-│   ├── 📁 public/              # Static assets
-│   ├── 📁 src/
-│   │   ├── 📁 assets/          # Images, icons
-│   │   ├── 📁 components/      # Reusable components
-│   │   ├── 📁 pages/           # Page components
-│   │   ├── 📁 store/           # Redux store
-│   │   │   ├── 📁 slices/      # Redux slices
-│   │   │   └── index.js        # Store configuration
-│   │   ├── 📁 context/         # React context
-│   │   ├── App.jsx             # Main app component
-│   │   └── main.jsx            # Entry point
-│   ├── package.json
-│   └── vite.config.js
-├── 📁 backend/                  # Node.js backend
-│   ├── 📁 controllers/         # Route controllers
-│   ├── 📁 middleware/          # Custom middleware
-│   ├── 📁 models/              # Mongoose models
-│   ├── 📁 routes/              # API routes
-│   ├── 📁 config/              # Configuration files
-│   ├── server.js               # Server entry point
-│   └── package.json
-├── 📁 admin/                    # Admin dashboard
-│   ├── 📁 src/
-│   │   ├── 📁 components/      # Admin components
-│   │   ├── 📁 pages/           # Admin pages
-│   │   ├── 📁 assets/          # Admin assets
-│   │   └── App.jsx             # Admin app
-│   └── package.json
-└── README.md
-```
-
-## 🚦 Available Scripts
-
-### Frontend
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run lint         # Run ESLint
-```
-
-### Backend
-```bash
-npm run dev          # Start with nodemon
-npm start            # Start production server
-```
-
-### Admin
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-```
 
 ## 🔍 Testing
 
@@ -327,34 +214,7 @@ npm run preview      # Preview production build
 - [ ] Admin product management
 - [ ] Admin order management
 
-### Test Accounts
-```
-Admin:
-Email: admin@mavogue.com
-Password: admin123
 
-Test User:
-Email: test@example.com
-Password: test123
-```
-
-## 🚀 Deployment
-
-### Frontend (Vercel)
-1. Connect GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
-
-### Backend (Railway/Heroku)
-1. Create new app on Railway/Heroku
-2. Connect GitHub repository
-3. Set environment variables
-4. Deploy
-
-### Database (MongoDB Atlas)
-1. Create cluster on MongoDB Atlas
-2. Get connection string
-3. Update `MONGODB_URI` in backend environment
 
 ## 🎯 Performance Optimizations
 
@@ -372,53 +232,5 @@ Password: test123
 - **CORS Configuration**: Proper cross-origin setup
 - **Environment Variables**: Sensitive data protection
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines
-- Follow existing code style and conventions
-- Write meaningful commit messages
-- Test your changes thoroughly
-- Update documentation when necessary
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [React.js](https://reactjs.org/) - Frontend framework
-- [Redux Toolkit](https://redux-toolkit.js.org/) - State management
-- [Express.js](https://expressjs.com/) - Backend framework
-- [MongoDB](https://mongodb.com/) - Database
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [Cloudinary](https://cloudinary.com/) - Image management
-- [Stripe](https://stripe.com/) - Payment processing
-- [Razorpay](https://razorpay.com/) - Payment gateway
-
-## 📞 Support
-
-For support and questions:
-- Email: support@mavogue.com
-- GitHub Issues: [Create an issue](https://github.com/yourusername/mavogue-ecommerce/issues)
-
-## 🗺️ Roadmap
-
-- [ ] **Phase 1**: Mobile app development (React Native)
-- [ ] **Phase 2**: Advanced analytics dashboard
-- [ ] **Phase 3**: Multi-vendor marketplace
-- [ ] **Phase 4**: AI-powered product recommendations
-- [ ] **Phase 5**: Inventory management system
-- [ ] **Phase 6**: Customer support chat integration
-
----
-
-<div align="center">
-  <p>Made with ❤️ by <a href="https://github.com/yourusername">Your Name</a></p>
-  <p>⭐ Star this repository if you found it helpful!</p>
-</div>
+  Made with ❤️ by Abhishek Hiwarkar
